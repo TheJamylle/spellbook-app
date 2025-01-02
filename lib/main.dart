@@ -11,6 +11,7 @@ void main() async {
 
   LocalizationManager localizationManager = LocalizationManager();
   await localizationManager.loadLanguageCode();
+  await localizationManager.loadLanguageFile(localizationManager.languageCode);
 
   runApp(ChangeNotifierProvider(
       create: (context) => localizationManager, child: const Grimorio()));

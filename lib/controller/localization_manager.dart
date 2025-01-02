@@ -13,8 +13,8 @@ class LocalizationManager with ChangeNotifier {
   final Map<String, Map<String, String>> _mapLanguages = {};
 
   Future<void> setLanguage(String newCode) async {
-    await getLanguageFromServer(newCode);
-    _saveLanguageCode(newCode);
+    await loadLanguageFile(newCode);
+    await _saveLanguageCode(newCode);
     languageCode = newCode;
     notifyListeners();
   }
@@ -34,8 +34,6 @@ class LocalizationManager with ChangeNotifier {
       languageCode = defaultLanguageCode;
     }
 
-    await getLanguageFromServer(languageCode);
-
     notifyListeners();
   }
 
@@ -46,6 +44,28 @@ class LocalizationManager with ChangeNotifier {
     Map<String, dynamic> response = jsonDecode(httpResponse.body);
 
     _mapLanguages[newCode] = response.map((key, value) => MapEntry(key, value.toString()));
+
+    _saveLanguageFile(newCode);
+  }
+
+  Future<void> _saveLanguageFile(String newCode) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setString(PrefsKeys().languageFile(languageCode), jsonEncode(_mapLanguages[newCode]));
+  }
+  
+  Future<void> loadLanguageFile(String newCode) async {
+    if (_mapLanguages[newCode] == null) {
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      String? result = preferences.getString(PrefsKeys().languageFile(newCode));
+      
+      if (result != null) {
+        Map<String, dynamic> resultMap = jsonDecode(result);
+        
+        _mapLanguages[newCode] = resultMap.map((key, value) => MapEntry(key, value.toString()));
+      } else {
+        await getLanguageFromServer(newCode);
+      }
+    }
   }
 
   String _getSentence(String keySentence) {
