@@ -1,0 +1,12 @@
+{
+    "clearBooks": "Clear all books",
+    "language": "Language",
+    "clear": "Clear",
+    "defaultLanguage": "From device",
+    "homeTitle": "Spellbook",
+    "homeEmpty": "Your spellbook is empty",
+    "homeEmptyCall": "Let's learn something new?",
+    "addBook": "Add Book",
+    "search": "Search",
+    "searchPlaceholder": "Search by title or author"
+}

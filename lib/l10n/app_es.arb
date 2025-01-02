@@ -1,0 +1,39 @@
+{
+    "@@locale": "es",
+    "dashboardEnterButton": "Empezar",
+    "@dashboardEnterButton": {
+        "description": "Botão 'Entrar'"
+    },
+    "dashboardTipRegister": "Registra tus libros",
+    "@dashboardTipRegisterText": {
+        "description": "Dica do carrossel"
+    },
+    "dashboardTipTakeNotesText": "Toma notas",
+    "@dashboardTipTakeNotesText": {
+        "decription": "Dica do carrossel"
+    },
+    "dashboardTipVisualizeText": "Visualiza tu progreso",
+    "@dashboardTipVisualizeText": {
+        "decription": "Dica do carrossel"
+    },
+    "loginEmailInput": "Correo electrónico",
+    "@loginEmailInput": {
+        "description": "Campo de inicio de sesión"
+    },
+    "loginPasswordInput": "Contraseña",
+    "@loginPasswordInput": {
+        "description": "Campo de inicio de sesión"
+    },
+    "loginForgotPasswordButton": "¿Olvidaste tu contraseña?",
+    "@loginForgotPasswordButton": {
+        "description": "Campo de inicio de sesión"
+    },
+    "loginButton": "Iniciar sesión",
+    "loginRegisterButton": "Regístrate",
+    "registerText": "Regístrate",
+    "registerNameInput": "Nombre",
+    "registerEmailInput": "Correo electrónico",
+    "registerPasswordInput": "Contraseña",
+    "registerButton": "Registrar",
+    "registerDoLoginButton": "Iniciar sesión"
+}
