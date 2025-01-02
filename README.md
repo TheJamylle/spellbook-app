@@ -1,6 +1,6 @@
 # Flutter com i18n: internacionalizando aplicativos
 
-Projeto **Meu Pequeno Grimório** para o curso de Flutter com i18n: internacionalizando seus aplicativos, focado em apresentar soluções de internacionalização e localização para diversas situações usando Flutter.
+Projeto **Meu Pequeno Grimório** com i18n: internacionalizando seus aplicativos, focado em apresentar soluções de internacionalização e localização para diversas situações usando Flutter.
 
 ## ✨ Funcionalidades do projeto
 
