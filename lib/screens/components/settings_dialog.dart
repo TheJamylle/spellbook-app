@@ -29,7 +29,14 @@ class _SettingsDialog extends StatefulWidget {
 }
 
 class _SettingsDialogState extends State<_SettingsDialog> {
-  final DisplayedLanguages _language = DisplayedLanguages.device;
+  DisplayedLanguages _language = DisplayedLanguages.device;
+
+  @override
+  void initState() {
+    String languageCode = context.read<LocalizationManager>().languageCode;
+    _language = getDisplayByLanguageCode(languageCode);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,6 +157,19 @@ class _SettingsDialogState extends State<_SettingsDialog> {
     }
 
     showLoadingDialog(context, context.read<LocalizationManager>().setLanguage(newCode));
+  }
+}
+
+DisplayedLanguages getDisplayByLanguageCode(String languageCode) {
+  switch (languageCode) {
+    case 'pt':
+      return DisplayedLanguages.portuguese;
+    case 'en':
+      return DisplayedLanguages.english;
+    case 'es':
+      return DisplayedLanguages.spanish;
+    default:
+      return DisplayedLanguages.device;
   }
 }
 
